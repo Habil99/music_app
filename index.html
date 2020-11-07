@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://kit.fontawesome.com/7278212988.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./assets/style.css" />
+    <script src="./assets/main.js" defer></script>
+  </head>
+  <body>
+    <div id="snackbar">Some Text</div>
+    <audio id="audio"></audio>
+    <div class="container">
+      <div class="header">
+        <button class="left_arrow">
+          <i class="fa fa-arrow-left" aria-hidden="true"></i>
+        </button>
+        <h3>PLAYING NOW</h3>
+        <button class="hamburger"><i class="fas fa-bars"></i></button>
+      </div>
+
+      <div class="music-img">
+        <img id="song-img" src="./assets/images/faded.jpg" alt="" />
+      </div>
+
+      <div class="music-info">
+        <h2 id="music-name"></h2>
+        <h5 id="artist-name"></h5>
+      </div>
+
+      <div class="progress">
+        <button id="volume-down"><i class="fas fa-volume-down"></i></button>
+        <button id="volume-up"><i class="fas fa-volume-up"></i></button>
+        <button id="volume-mute"><i class="fas fa-volume-mute"></i></button>
+        <input type="range" min="0" max="100" step="1" id="range">
+      </div>
+
+      <div class="controllers">
+        <button id="prev-btn" class="previous">
+          <i class="fas fa-backward"></i>
+        </button>
+        <button id="play-btn" class="play">
+          <i id="play-btn-icon" class="fas fa-play"></i>
+        </button>
+        <button id="next-btn" class="next">
+          <i class="fas fa-forward"></i>
+        </button>
+      </div>
+
+      <div class="next-up">
+        <h4>
+          Next music is <span id="next-music-name"></span> by
+          <span id="next-music-artist"></span>
+        </h4>
+      </div>
+    </div>
+  </body>
+</html>

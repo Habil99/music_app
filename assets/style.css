@@ -1,0 +1,413 @@
+* {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+body {
+    background: #26282b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 350px;
+    height: 580px;
+    border-radius: 20px;
+    background: #32373c;
+    box-shadow: 5px 5px 20px #35383b,
+        -5px -5px 20px #33363a;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.header button.hamburger {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    outline: none;
+    border: none;
+    background: linear-gradient(145deg, #48484b, #2f3236);
+    box-shadow: 10px 10px 24px #3c4247,
+        -10px -10px 24px #53575c;
+    color: grey;
+    font-size: 18px;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.header button.left_arrow {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    outline: none;
+    border: none;
+    background: linear-gradient(145deg, #48484b, #2f3236);
+    box-shadow: 6px 6px 16px #3c4247,
+        -6px -6px 16px #53575c;
+    color: white;
+    font-size: 20px;
+    font-weight: bolder;
+    cursor: pointer;
+    color: grey;
+}
+
+.header h3 {
+    color: grey;
+}
+
+.music-img {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 0;
+    border-radius: 50%;
+    box-shadow: 10px 10px 24px #3c4247,
+        -10px -10px 24px #53575c;
+    transition: all .6s linear;
+    position: relative;
+    text-align: center;
+    border: 2px dashed #3c4247;
+}
+
+.music-img img {
+    border: 4px solid rgba(0, 0, 0, 0.22);
+    box-shadow: 5px 5px 14px #3c4247,
+        -5px -5px 14px #53575c;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    transform: translateY(16%);
+}
+
+.music-info {
+    margin: 20px auto 0px;
+    width: 150px;
+    height: 65px;
+    text-align: center;
+}
+
+.music-info h2 {
+    color: white;
+    margin-bottom: 2px;
+}
+
+.music-info h5 {
+    color: grey;
+}
+
+.progress {
+    width: 280px;
+    height: 65px;
+    margin: 0px auto;
+    background: none;
+    border-radius: 10px;
+    position: relative;
+}
+
+.progress button {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    outline: none;
+    border: none;
+    background: linear-gradient(145deg, #48484b, #2f3236);
+    box-shadow: 3px 3px 12px #3c4247,
+        -3px -3px 12px #53575c;
+    color: white;
+    font-size: 16px;
+    font-weight: bolder;
+    cursor: pointer;
+    color: grey;
+}
+
+.progress #volume-down {
+    top: 10px;
+    left: 10px;
+    position: absolute;
+}
+
+.progress #volume-mute {
+    top: 10px;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+}
+
+.progress #volume-mute.muted {
+    color: white;
+    background: #141414;
+    box-shadow: inset -3px 3px 12px #080808,
+        inset 3px -3px 12px #202020;
+}
+
+.progress #volume-up {
+    top: 10px;
+    right: 10px;
+    position: absolute;
+}
+
+input[type=range] {
+    -webkit-appearance: none;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(50%);
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 5px;
+    background: rgb(42, 41, 41);
+    border: none;
+    border-radius: 3px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: grey;
+    margin-top: -4px;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #ccc;
+}
+
+input[type=range] {
+    /* fix for FF unable to apply focus style bug  */
+    border: 1px solid white;
+
+    /*required for proper track sizing in FF*/
+    width: 100%;
+}
+
+input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 5px;
+    background: rgb(42, 41, 41);
+    border: none;
+    border-radius: 3px;
+}
+
+input[type=range]::-moz-range-thumb {
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: grey;
+}
+
+input[type="range"] {
+    background-color: transparent;
+    border: 0px;
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    color: transparent;
+    cursor: default;
+}
+
+/*hide the outline behind the border*/
+input[type=range]:-moz-focusring {
+    outline-offset: -1px;
+    background: transparent;
+}
+
+input[type=range]:focus::-moz-range-track {
+    background: #ccc;
+}
+
+.controllers {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 1.2rem;
+}
+
+.controllers button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    outline: none;
+    border: none;
+    color: white;
+    background: linear-gradient(145deg, #48484b, #2f3236);
+    box-shadow: 9px 9px 18px #191a1c,
+        -9px -9px 18px #43464a;
+    cursor: pointer;
+    transition: all 1s ease-in-out;
+}
+
+.controllers button.play,
+.controllers button.next {
+    padding: 1rem 1.2rem;
+}
+
+.controllers .previous i {
+    font-size: 25px;
+    font-weight: bolder;
+    color: grey;
+}
+
+.controllers .play i {
+    font-size: 25px;
+    font-weight: bolder;
+    color: grey;
+}
+
+.controllers .play.active {
+    background: #141414;
+    box-shadow: inset -5px 5px 12px #080808,
+        inset 5px -5px 12px #202020;
+}
+
+.controllers .play.active i {
+    color: white;
+}
+
+.controllers .next i {
+    font-size: 25px;
+    font-weight: bolder;
+    color: grey;
+}
+
+audio {
+    /* display: none; */
+    position: absolute;
+    top: 30px;
+    left: 50px;
+}
+
+.next-up {
+    width: 300px;
+    height: 40px;
+    margin: 5px auto;
+    color: grey;
+    text-align: center;
+}
+
+.next-up #next-music-name {
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.603);
+}
+
+.next-up #next-music-artist {
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.603);
+}
+
+#snackbar {
+    visibility: hidden;
+    /* Hidden by default. Visible on click */
+    min-width: 150px;
+    /* Set a default minimum width */
+    /* Divide value of min-width by 2 */
+    background: linear-gradient(145deg, #48484b, #2f3236);
+    /* Black background color */
+    color: #fff;
+    margin-left: -50px;
+    /* White text color */
+    text-align: center;
+    /* Centered text */
+    border-radius: 2px;
+    /* Rounded borders */
+    padding: 16px;
+    /* Padding */
+    position: fixed;
+    /* Sit on top of the screen */
+    z-index: 1;
+    /* Add a z-index if needed */
+    top: 50%;
+    /* Center the snackbar */
+    left: 10px;
+    /* 30px from the bottom */
+    transform: rotate(90deg);
+    color: white;
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#snackbar.show {
+    visibility: visible;
+    /* Show the snackbar */
+    /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+    However, delay the fade out process for 2.5 seconds */
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+#snackbar.muted {
+    visibility: visible;
+    /* Show the snackbar */
+    /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+    However, delay the fade out process for 2.5 seconds */
+    background: rgb(93, 7, 7);
+    color: white;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+    from {
+        left: 0;
+        opacity: 0;
+    }
+
+    to {
+        left: 10px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadein {
+    from {
+        left: 0;
+        opacity: 0;
+    }
+
+    to {
+        left: 10px;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeout {
+    from {
+        bottom: 10px;
+        opacity: 1;
+    }
+
+    to {
+        left: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        bottom: 10px;
+        opacity: 1;
+    }
+
+    to {
+        left: 0;
+        opacity: 0;
+    }
+}
