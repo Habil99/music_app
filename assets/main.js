@@ -19,6 +19,11 @@ window.onload = () => {
   const volume_up = document.getElementById("volume-up");
   const volume_mute = document.getElementById("volume-mute");
   const snackbar = document.getElementById("snackbar");
+  const layer = document.querySelector(".loader-layer");
+
+  setTimeout(() => {
+    layer.style.display = "none";
+  }, 5000);
 
   let songs = [
     {
@@ -118,6 +123,7 @@ window.onload = () => {
     if (!audio.muted) {
       audio.muted = true;
       volume_mute.classList.add("muted");
+      range.value = 0;
       snackbar.innerText = `Volumed muted`;
       snackbar.className = "muted";
       setTimeout(function () {
@@ -130,7 +136,7 @@ window.onload = () => {
   }
 
   function volumeUp() {
-    if (audio.volume >= 0 && audio.volume <= 0.9) {
+    if (audio.volume >= 0 && audio.volume <= 1) {
       if (audio.muted) {
         volume_mute.classList.remove("muted");
         audio.muted = false;
@@ -147,7 +153,7 @@ window.onload = () => {
   }
 
   function volumeDown() {
-    if (audio.volume >= 0.1 && audio.volume <= 1) {
+    if (audio.volume >= 0 && audio.volume <= 1) {
       if (audio.muted) {
         volume_mute.classList.remove("muted");
         audio.muted = false;
@@ -165,9 +171,6 @@ window.onload = () => {
 
   function setVolume() {
     audio.volume = range.value / 100;
+    volume_mute.classList.remove("muted");
   }
-
-  // Add the "show" class to DIV
-
-  // After 3 seconds, remove the show class from DIV
 };
